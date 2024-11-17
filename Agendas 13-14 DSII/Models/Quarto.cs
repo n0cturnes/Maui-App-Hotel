@@ -9,9 +9,9 @@ namespace Agendas_13_14_DSII.Models
 {
     public class Quarto
     {
-        public String descricao { get; set; }
-        public double vDiariaAdulto {  get; set; }
-        public double vDiariaCrianca { get; set; }
+        public required String descricao { get; set; }
+        public required double vDiariaAdulto {  get; set; }
+        public required double vDiariaCrianca { get; set; }
 
     }
 }

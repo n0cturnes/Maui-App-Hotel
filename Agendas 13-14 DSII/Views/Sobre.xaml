@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agendas_13_14_DSII.Views.Sobre"
+             Title="Sobre"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource MidnightBlue}">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        <Frame VerticalOptions="Center" Padding="10" Margin="10">
+            <VerticalStackLayout>
+                <Label 
+                    Text="Desenvolvido por: "
+                    FontFamily="MooliRegular"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    TextColor="{StaticResource SecondaryDarkText}"/>
+                <Label 
+                    Text="Anna Clara Nunes da Silva Toledo"
+                    FontFamily="MooliRegular"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                <Label/>
+                <Label 
+                    Text="Ano de desenvolvimento: "
+                    FontFamily="MooliRegular"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    TextColor="{StaticResource SecondaryDarkText}"/>
+                <Label 
+                    Text="2024"
+                    FontFamily="MooliRegular"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Frame>
+        <Button Text="Voltar" 
+        HorizontalOptions="Center" Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

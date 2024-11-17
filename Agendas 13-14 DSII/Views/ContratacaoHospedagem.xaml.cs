@@ -1,3 +1,5 @@
+using Agendas_13_14_DSII.Models;
+
 namespace Agendas_13_14_DSII.Views;
 
 public partial class ContratacaoHospedagem : ContentPage
@@ -14,15 +16,26 @@ public partial class ContratacaoHospedagem : ContentPage
 		dtpck_checkout.MaximumDate = dtpck_checkin.Date.AddMonths(6);
 	}
 
-	private void Button_Clicked(object sender, EventArgs e)
+	private async void Button_Clicked(object sender, EventArgs e)
 	{
 		try
 		{
-			Navigation.PushAsync(new HospedagemContratada());
+			Hospedagem h = new Hospedagem
+			{
+				quartoSelecionado = (Quarto)pck_suite.SelectedItem,
+				QntAdultos = Convert.ToInt32(stp_adultos.Value),
+				QntCriancas = Convert.ToInt32(stp_criancas.Value),
+				dataCheckIn = dtpck_checkin.Date,
+				dataCheckOut = dtpck_checkout.Date,
+			};
+			await Navigation.PushAsync(new HospedagemContratada()
+			{
+				BindingContext = h
+			});
 		}
 		catch (Exception ex)
 		{
-			DisplayAlert("ops", ex.Message, "OK");
+			await DisplayAlert("ops", ex.Message, "OK");
 
 		}
 	}
@@ -34,4 +47,17 @@ public partial class ContratacaoHospedagem : ContentPage
 		dtpck_checkout.MinimumDate = data_selecionada_checkin.Date.AddDays(1);
 		dtpck_checkout.MaximumDate = data_selecionada_checkin.Date.AddMonths(6);
 	}
+
+    private void btn_sobre_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            Navigation.PushAsync(new Sobre());
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("ops", ex.Message, "OK");
+
+        }
+    }
 }

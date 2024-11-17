@@ -8,23 +8,23 @@
              BackgroundColor="{StaticResource MidnightBlue}">
     <VerticalStackLayout VerticalOptions="CenterAndExpand">
 
-        <Label Text="Suíte Super Luxo"
+        <Label Text="{Binding quartoSelecionado.descricao}"
                TextColor="{StaticResource SecondaryDarkText}"
                FontFamily="MooliRegular"
                FontSize="Medium"/>
 
         <Frame Margin="10" Padding="10">
-            <HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Adultos:"/>
-                    <Label Text="1" TextColor="{StaticResource SecondaryDarkText}"/>
+            <StackLayout Orientation="Horizontal">
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Adultos: "/>
+                    <Label Text="{Binding QntAdultos}" TextColor="{StaticResource SecondaryDarkText}"/>
                 </HorizontalStackLayout>
-                
-                <HorizontalStackLayout>
-                    <Label Text="Crianças:"/>
-                    <Label Text="1" TextColor="{StaticResource SecondaryDarkText}"/>
+
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Crianças: "/>
+                    <Label Text="{Binding QntCriancas}" TextColor="{StaticResource SecondaryDarkText}"/>
                 </HorizontalStackLayout>
-            </HorizontalStackLayout>
+            </StackLayout>
         </Frame>
 
         <Frame Margin="10" Padding="10">
@@ -33,9 +33,9 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Check-out: "/>
                 <Label Grid.Row="0" Grid.Column="2" Text="Estadia: "/>
 
-                <Label Grid.Row="1" Grid.Column="0" Text="12/12/1212"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="32/23/1212"/>
-                <Label Grid.Row="1" Grid.Column="2" Text="3425"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding dataCheckIn, StringFormat='{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding dataCheckOut, StringFormat='{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding estadia}"/>
 
             </Grid>
         </Frame>
@@ -43,7 +43,7 @@
         <Frame Margin="10" Padding="10">
             <HorizontalStackLayout>
                 <Label Text="Valor Total: "/>
-                <Label Text="R$232131"/>
+                <Label Text="{Binding valorTotal, StringFormat='{0:c}'}"/>
             </HorizontalStackLayout>
         </Frame>
         <Button Text="Voltar" 
